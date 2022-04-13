@@ -7,11 +7,16 @@ export default function ThreeD() {
 
     const refContainer = useRef()
     const [mixer, setMixer] = useState()
+    const [model, setModel] = useState()
     const [scene] = useState(new THREE.Scene())
     const [camera, setCamera] = useState()
     const [loading, setLoading] = useState(true)
     const [renderer, setRenderer] = useState()
     const [target] = useState(new THREE.Vector3(0, 1.5, 0))
+
+    const updateModel = (model, t) => {
+        model.rotation.y += t / 25
+    }
     
     const handleWindowResize = useCallback(() => {
         const { current: container } = refContainer
@@ -25,12 +30,27 @@ export default function ThreeD() {
         }
     }, [renderer])
 
+    const handleWindowScroll = useCallback(() => {
+        const { current: container } = refContainer
+        if (container && camera && model) {
+            const t = window.pageYOffset
+            camera.position.y = -(t * 0.004)
+            if (t >= 700) {
+                model.position.z = (t-700) / 75
+            } else {
+                model.position.z = 0
+            }
+        }
+    }, [camera, model])
+
     useEffect(() => {
         window.addEventListener('resize', handleWindowResize, false)
+        window.addEventListener('scroll', handleWindowScroll, false)
         return () => {
             window.removeEventListener('resize', handleWindowResize, false)
+            window.removeEventListener('scroll', handleWindowScroll, false)
         }
-    }, [renderer, handleWindowResize])
+    }, [renderer, model, handleWindowResize])
 
     useEffect(() => {
         (async () => {
@@ -51,25 +71,26 @@ export default function ThreeD() {
                 container.appendChild(renderer.domElement)
                 setRenderer(renderer)
 
-                const camera = new THREE.PerspectiveCamera(75, screenW / screenH, 0.1, 100)
+                const camera = new THREE.PerspectiveCamera(75, screenW / screenH, 0.01, 100)
                 setCamera(camera)
-                camera.position.set(0, 2, 0)
+                camera.position.set(0, 0, 0)
                 scene.add(camera)
 
                 const ambientLight = new THREE.AmbientLight(0xffffff, 2)
                 scene.add(ambientLight)
 
                 const directionalLight = new THREE.DirectionalLight(0xffffff, 4)
-                directionalLight.position.set(2, 2, 2)
+                directionalLight.position.set(10, -5, 7)
                 scene.add(directionalLight)
 
-                const { mixer } = await ModelLoader(scene, mixer, '/phi/scene.gltf', { 
-                    castShadow: true,
-                    receiveShadow: true,
+                const { mixer, model } = await ModelLoader(scene, mixer, '/phi/scene.gltf', { 
+                    castShadow: false,
+                    receiveShadow: false,
                     scalar: 0.3,
                     timeScale: 1/25
                 })
                 setMixer(mixer)
+                setModel(model)
 
                 const clock = new THREE.Clock()
                 let previousTime = 0
@@ -80,6 +101,7 @@ export default function ThreeD() {
                     previousTime = elapsedTime
 
                     if (mixer) mixer.update(deltaTime * 10)
+                    if (model) updateModel(model, deltaTime * 10)
 
                     camera.lookAt(target)
 

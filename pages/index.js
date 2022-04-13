@@ -1,5 +1,5 @@
-import Home from "../components/Home"
+import Main from "../components/Main"
 
 export default function index() {
-    return <Home />
+    return <Main />
 }

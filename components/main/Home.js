@@ -13,7 +13,7 @@ const divVariants = {
         opacity: 1,
         transition: {
             delay: 0.3,
-            duration: 1
+            duration: 0.8
         }
     }
 }
@@ -27,8 +27,8 @@ const innerDivVariants = {
         y: 0,
         opacity: 1,
         transition: {
-            delay: 1,
-            duration: 1.5
+            delay: 0.8,
+            duration: 1
         }
     }
 }
@@ -40,12 +40,10 @@ export default function Home() {
 
     useEffect(() => {
         if (inView) {
-            console.log(`oi`)
             controls.start('visible')
             setAlreadySeen(true)
         }
         if (!inView && !alreadySeen) {
-            console.log(`not`)
             controls.start('hidden')
         }
     }, [inView, controls])
