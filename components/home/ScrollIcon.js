@@ -22,7 +22,7 @@ export default function ScrollIcon() {
     }, [])
 
     return (
-        <div className='flex h-screen justify-center items-end -mt-12 group font-home'>
+        <div className='flex h-screen justify-center items-end -mt-16 group font-home'>
             <div
                 ref={scrollIconRef}
                 className='flex items-center px-2 justify-center z-[9999] group-hover:scale-125 opacity-100 transition-all animate-bounce'
