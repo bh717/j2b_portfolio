@@ -40,11 +40,8 @@ export default function ThreeD() {
                 const screenW = container.clientWidth
 
                 const renderer = new THREE.WebGLRenderer({
-                    alpha: true,
-                    antialias: true
+                    alpha: true
                 })
-                renderer.shadowMap.enabled = true
-                renderer.shadowMap.type = THREE.PCFSoftShadowMap
                 renderer.physicallyCorrectLights = true
                 renderer.outputEncoding = THREE.sRGBEncoding
                 renderer.toneMapping = THREE.ACESFilmicToneMapping
@@ -63,14 +60,6 @@ export default function ThreeD() {
                 scene.add(ambientLight)
 
                 const directionalLight = new THREE.DirectionalLight(0xffffff, 4)
-                directionalLight.castShadow = true
-                directionalLight.shadow.normalBias = 0.05
-                directionalLight.shadow.mapSize.set(1024, 1024)
-                directionalLight.shadow.camera.far = 4
-                directionalLight.shadow.camera.left = - 2
-                directionalLight.shadow.camera.top = 3
-                directionalLight.shadow.camera.right = 2
-                directionalLight.shadow.camera.bottom = - 1
                 directionalLight.position.set(2, 2, 2)
                 scene.add(directionalLight)
 
