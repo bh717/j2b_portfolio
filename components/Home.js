@@ -59,7 +59,7 @@ export default function Home() {
                 initial="hidden"
                 animate={controls}
                 ref={ref} 
-                className='flex justify-center mx-auto border-x-0 xl:border-x-2 bg-home w-full h-[580px] bg-cover bg-center bg-no-repeat text-white'
+                className='flex justify-center mx-auto border-x-0 xl:border-x-2 bg-home w-full h-[640px] bg-cover text-white'
             >
                 <motion.div
                     variants={innerDivVariants}
