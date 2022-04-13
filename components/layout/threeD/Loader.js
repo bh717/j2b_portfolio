@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 
 export const Loader = () => {
-    return <div className="lds-ring absolute flex w-full justify-center items-center">
+    return <div className="lds-ring z-50 absolute flex w-full justify-center items-center">
         <div/><div/><div/><div/>
     </div>
 }

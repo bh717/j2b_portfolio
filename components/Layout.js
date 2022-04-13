@@ -5,6 +5,7 @@ export default function Layout({ children }) {
         <div className='bg-black min-h-screen'>
             <ThreeD />
             <main className='absolute'>
+                {children}
             </main>
         </div>
     )
