@@ -11,7 +11,7 @@ export default function ThreeD() {
     const [camera, setCamera] = useState()
     const [loading, setLoading] = useState(true)
     const [renderer, setRenderer] = useState()
-    const [target, setTarget] = useState(new THREE.Vector3(0, 1.5, 0))
+    const [target] = useState(new THREE.Vector3(0, 1.5, 0))
     
     const handleWindowResize = useCallback(() => {
         const { current: container } = refContainer
@@ -40,12 +40,15 @@ export default function ThreeD() {
                 const screenW = container.clientWidth
 
                 const renderer = new THREE.WebGLRenderer({
-                    alpha: true
+                    alpha: true,
+                    antialias: true
                 })
                 renderer.shadowMap.enabled = true
                 renderer.shadowMap.type = THREE.PCFSoftShadowMap
                 renderer.physicallyCorrectLights = true
                 renderer.outputEncoding = THREE.sRGBEncoding
+                renderer.toneMapping = THREE.ACESFilmicToneMapping
+                renderer.toneMappingExposure = 1
                 renderer.setSize(screenW, screenH)
                 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
                 container.appendChild(renderer.domElement)
@@ -62,6 +65,7 @@ export default function ThreeD() {
                 const directionalLight = new THREE.DirectionalLight(0xffffff, 4)
                 directionalLight.castShadow = true
                 directionalLight.shadow.normalBias = 0.05
+                directionalLight.shadow.mapSize.set(1024, 1024)
                 directionalLight.shadow.camera.far = 4
                 directionalLight.shadow.camera.left = - 2
                 directionalLight.shadow.camera.top = 3
@@ -73,7 +77,8 @@ export default function ThreeD() {
                 const { mixer } = await ModelLoader(scene, mixer, '/phi/scene.gltf', { 
                     castShadow: true,
                     receiveShadow: true,
-                    scalar: 0.5
+                    scalar: 0.3,
+                    timeScale: 1/12
                 })
                 setMixer(mixer)
 
@@ -87,8 +92,6 @@ export default function ThreeD() {
 
                     if (mixer) mixer.update(deltaTime * 10)
 
-                    camera.position.x = Math.cos(elapsedTime) * 2
-                    camera.position.z = Math.sin(elapsedTime) * 2
                     camera.lookAt(target)
 
                     renderer.render(scene, camera)
