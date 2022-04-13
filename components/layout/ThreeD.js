@@ -67,7 +67,7 @@ export default function ThreeD() {
                     castShadow: true,
                     receiveShadow: true,
                     scalar: 0.3,
-                    timeScale: 1/12
+                    timeScale: 1/25
                 })
                 setMixer(mixer)
 

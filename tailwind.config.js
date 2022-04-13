@@ -6,8 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        black: '#202020'
-      }
+        black: '#000000'
+      },
+      backgroundImage: {
+        'home': "url('/earth.jpg')",
+      },
+      fontFamily: {
+        home: ["home", "regular"]
+      },
     },
   },
   plugins: [],

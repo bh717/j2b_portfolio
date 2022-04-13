@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "home";
+  src: url("../public/fonts/EarthOrbiter-YZ12.otf");
+}
+
+
 html,
 body {
   padding: 0;
@@ -17,6 +23,14 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.hide-scroll {
+  opacity: 0;
+  pointer-events: none;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 /* LOADER */
@@ -53,4 +67,9 @@ a {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0;
 }
