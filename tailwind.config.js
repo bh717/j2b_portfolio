@@ -10,6 +10,7 @@ module.exports = {
       },
       backgroundImage: {
         'home': "url('/earth.jpg')",
+        'about': "url('/stars.jpg')",
       },
       fontFamily: {
         home: ["home", "regular"]

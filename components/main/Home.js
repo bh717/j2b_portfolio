@@ -51,13 +51,13 @@ export default function Home() {
     return (
         <>
         <ScrollIcon />
-        <section className='flex text-center justify-center items-center w-full mt-28 font-home max-w-7xl mx-auto'>
+        <section className='flex text-center justify-center items-center w-full mt-28 font-home max-w-[1536px] mx-auto'>
             <motion.div
                 variants={divVariants}
                 initial="hidden"
                 animate={controls}
                 ref={ref} 
-                className='flex justify-center mx-auto border-x-0 xl:border-x-2 bg-home w-full h-[640px] bg-cover text-white'
+                className='flex justify-center mx-auto border-x-0 2xl:border-x-2 bg-home w-full h-[640px] bg-cover text-white'
             >
                 <motion.div
                     variants={innerDivVariants}
@@ -65,7 +65,7 @@ export default function Home() {
                     animate={controls}
                     className='z-[9999] justify-center flex flex-col p-3 m-2 h-fit bg-black bg-opacity-75 rounded-md'
                 >
-                    <h1 className='text-4xl sm:text-6xl'>Yuri Corredor</h1>
+                    <h1 className='text-4xl sm:text-6xl font-bold'>Yuri Corredor</h1>
                     <h3 className='text-xl sm:text-2xl'>Developer</h3>
                 </motion.div>
             </motion.div>
