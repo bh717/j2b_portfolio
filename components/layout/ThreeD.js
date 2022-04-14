@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { Loader, LoaderContainer } from './threeD/Loader'
+import ShapeLoader from '../../lib/ShapeLoader'
 import ModelLoader from '../../lib/ModelLoader'
 import * as THREE from 'three'
 
@@ -83,7 +84,11 @@ export default function ThreeD() {
                 directionalLight.position.set(10, -5, 7)
                 scene.add(directionalLight)
 
-                const { mixer, model } = await ModelLoader(scene, mixer, '/phi/scene.gltf', { 
+                const starsGeometry = new THREE.OctahedronBufferGeometry(0.1, 0)
+                const starsMaterial = new THREE.MeshMatcapMaterial()
+                ShapeLoader(starsGeometry, starsMaterial, 1000, 100, '/texture/texture.png', scene)
+
+                const { mixer, model } = await ModelLoader(scene, mixer, '/astronaut/scene.gltf', { 
                     castShadow: false,
                     receiveShadow: false,
                     scalar: 0.3,
