@@ -124,5 +124,18 @@ export default function ThreeD() {
         }
     }, [mixer])
 
+    useEffect(() => {
+        const { current: container } = refContainer
+        if (container && camera && model) {
+            const t = window.pageYOffset
+            camera.position.y = -(t * 0.004)
+            if (t >= 700) {
+                model.position.z = (t-700) / 75
+            } else {
+                model.position.z = 0
+            }
+        }
+    }, [model, camera])
+
     return <LoaderContainer ref={refContainer}>{loading && <Loader />}</LoaderContainer>
 }

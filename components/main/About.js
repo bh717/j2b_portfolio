@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react"
 import { useInView } from "react-intersection-observer"
 import { motion, useAnimation } from "framer-motion"
-import Skills from "./about/Skills"
 
 const imageVariants = {
     hidden: {
@@ -12,8 +11,7 @@ const imageVariants = {
         x: 0,
         opacity: 1,
         transition: {
-            delay: 0.5,
-            duration: 0.8
+            duration: 0.5
         }
     }
 }
@@ -27,8 +25,7 @@ const divVariants = {
         y: 0,
         opacity: 1,
         transition: {
-            delay: 0.5,
-            duration: 0.8
+            duration: 0.5
         }
     }
 }

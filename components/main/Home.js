@@ -12,8 +12,7 @@ const divVariants = {
         y: 0,
         opacity: 1,
         transition: {
-            delay: 0.3,
-            duration: 0.8
+            duration: 0.5
         }
     }
 }
@@ -27,8 +26,8 @@ const innerDivVariants = {
         y: 0,
         opacity: 1,
         transition: {
-            delay: 0.8,
-            duration: 1
+            delay: 0.5,
+            duration: 0.5
         }
     }
 }
