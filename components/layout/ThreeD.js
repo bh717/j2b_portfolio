@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Loader, LoaderContainer } from './threeD/Loader'
 import ModelLoader from '../../lib/ModelLoader'
 import * as THREE from 'three'
@@ -18,7 +18,7 @@ export default function ThreeD() {
         model.rotation.y += t / 25
     }
     
-    const handleWindowResize = useCallback(() => {
+    const handleWindowResize = () => {
         const { current: container } = refContainer
         if (container && renderer) {
             const screenW = container.clientWidth
@@ -28,9 +28,9 @@ export default function ThreeD() {
             camera.aspect = screenW / screenH
             camera.updateProjectionMatrix()
         }
-    }, [renderer])
+    }
 
-    const handleWindowScroll = useCallback(() => {
+    const handleWindowScroll = () => {
         const { current: container } = refContainer
         if (container && camera && model) {
             const t = window.pageYOffset
@@ -41,7 +41,7 @@ export default function ThreeD() {
                 model.position.z = 0
             }
         }
-    }, [camera, model])
+    }
 
     useEffect(() => {
         window.addEventListener('resize', handleWindowResize, false)
