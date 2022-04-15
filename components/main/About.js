@@ -82,7 +82,7 @@ export default function About() {
                         animate={controls}
                         className="order-1 md:order-2 "
                     >
-                        <h1 ref={titleRef} className="text-center font-home p-6 md:p-12 pt-0 px-2 text-6xl font-bold">ABOUT ME</h1>
+                        <h1 ref={titleRef} className="text-center font-home p-6 md:p-12 pt-0 px-2 text-4xl sm:text-6xl font-bold">ABOUT ME</h1>
                         <p className="px-4 sm:px-16 pb-8 font-bold">
                             Ambitious software developer with passion for learning new skills. 
                             Obsessed with application security and automating tasks. Experienced in 

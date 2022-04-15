@@ -154,8 +154,8 @@ export default function Skills() {
 
     return (
         <section className='flex self-center w-full justify-center items-center'>
-            <motion.div variants={divVariants} initial='hidden' animate={controls} className='flex max-w-7xl w-full flex-col justify-center items-center z-[9999]'>
-                <h1 ref={titleRef} className='font-home font-bold text-5xl text-white'>SKILLS</h1>
+            <motion.div variants={divVariants} initial='hidden' animate={controls} className='flex max-w-7xl w-full flex-col justify-center items-center z-[9999] mt-8'>
+                <h1 ref={titleRef} className='font-home font-bold text-4xl sm:text-6xl text-white'>SKILLS</h1>
                 <div ref={skillsDivRef}>
                     <div ref={ref} className='p-4 py-8 flex justify-center items-center flex-wrap max-w-3xl font-home text-white'>
                         {skills.map((skill, index) => <SkillsItem 
