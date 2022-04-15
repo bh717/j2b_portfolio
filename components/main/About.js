@@ -66,7 +66,7 @@ export default function About() {
     return (
         <section className="my-16 w-full flex items-center justify-center overflow-hidden">
             <div className="max-w-7xl text-white z-[9999]">
-                <div ref={ref} className="flex flex-col md:flex-row justify-center items-center md:items-start">
+                <div className="flex flex-col md:flex-row justify-center items-center md:items-start">
                     <motion.img
                         variants={imageVariants}
                         initial="hidden"
@@ -76,6 +76,7 @@ export default function About() {
                         src="astronaut.jpg" 
                     />
                     <motion.div
+                        ref={ref}
                         variants={divVariants}
                         initial="hidden"
                         animate={controls}
