@@ -33,7 +33,7 @@ export default function Footer() {
             <div className="flex flex-col items-center z-[9999] pb-2 sm:pb-2 p-2 sm:p-8 relative bg-white w-full">
                 <div className="w-full justify-center items-center max-w-7xl flex flex-col p-2 sm:p-8">
                     <h1 className="text-3xl font-bold text-center">How this website was built</h1>
-                    <div className="flex flex-col flex-wrap max-w-5xl font-semibold p-2 pt-8">
+                    <div className="flex flex-col flex-wrap max-w-5xl font-semibold p-2 pt-8 pb-8">
                         <p>You can check github to see the full source code of this website. But here is a quick 
                             explanation of how things were done. As stated before, my portfolio was inspired by 
                             Project Hail Mary, a book by Andy Weir, writer of The Martian. After reading the book, I 
