@@ -1,18 +1,10 @@
-import { useState } from "react"
-
-export default function SkillsItem({ name, Icon, hoverColor }) {
-
-    const [hover, setHover] = useState(false)
-
+export default function SkillsItem({ name, Icon, color }) {
     return (
-        <div className='flex flex-col justify-center items-center p-4'>
-            <div
-                className={`cursor-pointer hover:scale-125 transition-all duration-300`} 
-                onMouseEnter={() => setHover(true)} 
-                onMouseLeave={() => setHover(false)}>
-                <Icon style={hover ? {color: hoverColor} : {color: 'white'}} size={45} />
+        <div className='flex flex-col justify-center items-center p-4 w-[120px]'>
+            <div className='hover:scale-[1.3] transition-all duration-300'>
+                <Icon color={color} size={45} />
             </div>
-            <p className='text-white text-bold p-2 text-xs font-home'>{name}</p>
+            <p className='text-bold p-2 text-xs'>{name}</p>
         </div>
     )
 }

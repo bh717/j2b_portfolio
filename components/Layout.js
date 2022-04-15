@@ -1,4 +1,5 @@
 import ThreeD from './layout/ThreeD'
+import Footer from './layout/Footer'
 
 export default function Layout({ children }) {
     return (
@@ -6,6 +7,7 @@ export default function Layout({ children }) {
             <ThreeD />
             <main className='absolute w-full bg-black'>
                 {children}
+                <Footer />
             </main>
         </div>
     )

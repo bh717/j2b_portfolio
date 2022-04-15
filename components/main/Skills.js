@@ -16,7 +16,7 @@ import {
     SiGit,
     SiPostman,
     SiRedux,
-    SiAdobephotoshop
+    SiThreedotjs
 } from 'react-icons/si'
 import { FaNode } from 'react-icons/fa'
 import SkillsItem from './skills/SkillsItem'
@@ -25,82 +25,82 @@ const skills = [
     {
         name: 'expressjs',
         Icon: SiExpress,
-        hoverColor: 'white'
+        color: 'white'
     },
     {
         name: 'javascript',
         Icon: SiJavascript,
-        hoverColor: '#ead41c'
+        color: '#ead41c'
     },
     {
         name: 'nodejs',
         Icon: FaNode,
-        hoverColor: '#89bb3c'
+        color: '#89bb3c'
     },
     {
         name: 'mongodb',
         Icon: SiMongodb,
-        hoverColor: '#359e40'
+        color: '#359e40'
     },
     {
         name: 'nextjs',
         Icon: SiNextdotjs,
-        hoverColor: 'white'
+        color: 'white'
     },
     {
         name: 'python',
         Icon: SiPython,
-        hoverColor: '#346998'
+        color: '#346998'
     },
     {
         name: 'flask',
         Icon: SiFlask,
-        hoverColor: 'white'
+        color: 'white'
     },
     {
         name: 'sqlite',
         Icon: SiSqlite,
-        hoverColor: '#6bb6df'
+        color: '#6bb6df'
     },
     {
         name: 'tailwind',
         Icon: SiTailwindcss,
-        hoverColor: '#35b3eb'
+        color: '#35b3eb'
     },
     {
         name: 'react',
         Icon: SiReact,
-        hoverColor: '#5ad2ea'
+        color: '#5ad2ea'
     },
     {
         name: 'html',
         Icon: SiHtml5,
-        hoverColor: '#e6640a'
+        color: '#e6640a'
     },
     {
         name: 'css',
         Icon: SiCss3,
-        hoverColor: '#2760e5'
+        color: '#2760e5'
     },
     {
         name: 'git',
         Icon: SiGit,
-        hoverColor: '#f24c2d'
+        color: '#f24c2d'
     },
     {
         name: 'postman',
         Icon: SiPostman,
-        hoverColor: '#e66637'
+        color: '#e66637'
     },
     {
         name: 'redux',
         Icon: SiRedux,
-        hoverColor: '#7046b2'
+        color: '#7046b2'
     },
     {
-        name: 'photoshop',
-        Icon: SiAdobephotoshop,
-        hoverColor: '#001c33'
+        name: 'threejs',
+        Icon: SiThreedotjs,
+        color: 'white'
     }
 ]
 
@@ -153,16 +153,16 @@ export default function Skills() {
     }, [])
 
     return (
-        <section className='flex max-w-7xl w-full bg-stars bg-cover justify-center items-center'>
-            <motion.div variants={divVariants} initial='hidden' animate={controls} className='flex w-full flex-col justify-center items-center z-[9999]'>
+        <section className='flex self-center w-full justify-center items-center'>
+            <motion.div variants={divVariants} initial='hidden' animate={controls} className='flex max-w-7xl w-full flex-col justify-center items-center z-[9999]'>
                 <h1 ref={titleRef} className='font-home font-bold text-5xl text-white'>SKILLS</h1>
                 <div ref={skillsDivRef}>
-                    <div ref={ref} className='p-4 pt-8 flex justify-center items-center flex-wrap max-w-2xl'>
+                    <div ref={ref} className='p-4 pt-8 flex justify-center items-center flex-wrap max-w-3xl font-home text-white'>
                         {skills.map((skill, index) => <SkillsItem 
                             key={index} 
                             Icon={skill.Icon} 
                             name={skill.name} 
-                            hoverColor={skill.hoverColor} 
+                            color={skill.color} 
                         />)}
                     </div>
                 </div>

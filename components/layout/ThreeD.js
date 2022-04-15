@@ -86,7 +86,7 @@ export default function ThreeD() {
 
                 const starsGeometry = new THREE.OctahedronBufferGeometry(0.1, 0)
                 const starsMaterial = new THREE.MeshMatcapMaterial()
-                ShapeLoader(starsGeometry, starsMaterial, 1000, 100, '/texture/texture.png', scene)
+                ShapeLoader(starsGeometry, starsMaterial, 1000, 80, '/texture/texture.png', scene)
 
                 const { mixer, model } = await ModelLoader(scene, mixer, '/astronaut/scene.gltf', { 
                     castShadow: false,
