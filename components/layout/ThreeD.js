@@ -142,5 +142,5 @@ export default function ThreeD() {
         }
     }, [model, camera])
 
-    return <LoaderContainer ref={refContainer}>{loading && <Loader />}</LoaderContainer>
+    return <LoaderContainer loading={loading} ref={refContainer} />
 }
