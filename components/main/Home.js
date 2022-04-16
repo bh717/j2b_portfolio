@@ -68,10 +68,10 @@ export default function Home() {
                     <h1 className='text-4xl sm:text-6xl font-bold'>Yuri Corredor</h1>
                     <h3 className='text-xl sm:text-2xl'>Developer</h3>
                     <div className='flex flex-wrap self-end my-2 w-full justify-center'>
-                        <a rel="noreferrer" target="_blank" href='' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
+                        <a rel="noreferrer" target="_blank" href='https://github.com/YuriCorredor' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
                             <SiGithub color='white' size={30} />
                         </a>
-                        <a rel="noreferrer" target="_blank" href='' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
+                        <a rel="noreferrer" target="_blank" href='https://www.linkedin.com/in/yuri-corredor/' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
                             <SiLinkedin color='white' size={30} />
                         </a>
                     </div>
