@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { Loader, LoaderContainer } from './threeD/Loader'
+import { LoaderContainer } from './threeD/Loader'
 import ShapeLoader from '../../lib/ShapeLoader'
 import ModelLoader from '../../lib/ModelLoader'
 import * as THREE from 'three'
