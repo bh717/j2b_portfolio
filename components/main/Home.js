@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import ScrollIcon from './home/ScrollIcon'
+import { SiGithub, SiLinkedin } from 'react-icons/si'
 
 const divVariants = {
     hidden: {
@@ -66,6 +67,14 @@ export default function Home() {
                 >
                     <h1 className='text-4xl sm:text-6xl font-bold'>Yuri Corredor</h1>
                     <h3 className='text-xl sm:text-2xl'>Developer</h3>
+                    <div className='flex flex-wrap self-end my-2 w-full justify-center'>
+                        <a rel="noreferrer" target="_blank" href='' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
+                            <SiGithub color='white' size={30} />
+                        </a>
+                        <a rel="noreferrer" target="_blank" href='' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
+                            <SiLinkedin color='white' size={30} />
+                        </a>
+                    </div>
                 </motion.div>
             </motion.div>
         </section>
