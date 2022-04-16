@@ -1,7 +1,7 @@
 import { BiLinkExternal } from 'react-icons/bi'
 import { SiGithub } from 'react-icons/si'
 
-export default function ProjectItem({ link, color, title, description, techs, gitLink, bgPath, md, inverted }) {
+export default function ProjectItem({ link, color, title, description, techs, gitLink, bgPath, md, index }) {
 
     const hexToRgb = hex =>
     hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i ,(m, r, g, b) => '#' + r + r + g + g + b + b)
@@ -10,11 +10,13 @@ export default function ProjectItem({ link, color, title, description, techs, gi
 
     const colorRGB = hexToRgb(color)
 
+    const inverted = index % 2 == 0
+
     return (
-        <div className="text-white flex m-3 md:m-8 relative my-8 md:my-16">
+        <div className="text-white flex m-3 md:m-8 relative my-8 md:my-16 text-shadow">
             <div className={`${inverted ? 'order-2' : ''} rounded-sm absolute md:relative hidden md:block`}>
                 <a rel="noreferrer" target="_blank" href={link}>
-                    <div style={{backgroundColor: `rgb(${colorRGB[0]} ${colorRGB[1]} ${colorRGB[2]} / var(--tw-bg-opacity))`}} className="absolute rounded-sm h-full w-full bg-opacity-20 hover:bg-opacity-0 transition-all"/>
+                    <div style={{backgroundColor: `rgb(${colorRGB[0]} ${colorRGB[1]} ${colorRGB[2]} / var(--tw-bg-opacity))`}} className="absolute rounded-sm h-full w-full bg-opacity-30 hover:bg-opacity-0 transition-all"/>
                 </a>
                 <img className="block w-fit h-full object-cover rounded-sm" src={bgPath} />
             </div>

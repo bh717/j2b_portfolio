@@ -1,12 +1,13 @@
 import ProjectItem from "./projects/ProjectItem"
 import { useMediaQuery } from "../../lib/useMediaQuery"
+import ProjectsTitle from "./projects/ProjectsTitle"
 
 const projects = [
     {
         link: 'https://spotify-clone-yuri-corredor.vercel.app/',
         color: '#1ed760',
         title: "SPOTIFY 2.0 (clone)",
-        description: "With the spotify API, I decided to clone their Web App spotify's interface and some of its main features.Because of their API limitations, to use the clone you've to have Spotify Premium and a spotify device running.",
+        description: "With the spotify API, I decided to clone their Web App spotify's interface and some of its main features. Because of their API limitations, to use the clone you've to have Spotify Premium and a spotify device running.",
         techs: [
             'Next.js',
             'NextAuth.js',
@@ -15,51 +16,64 @@ const projects = [
             'Recoil'
         ],
         gitLink: 'https://github.com/YuriCorredor/spotify-clone',
-        bgPath: '/spotify.jpg',
-        inverted: false
+        bgPath: '/spotify.jpg'
     },
     {
-        link: 'https://spotify-clone-yuri-corredor.vercel.app/',
-        color: '#1ed760',
-        title: "SPOTIFY 2.0 (clone)",
-        description: "With the spotify API, I decided to clone their Web App spotify's interface and some of its main features.Because of their API limitations, to use the clone you've to have Spotify Premium and a spotify device running.",
+        link: 'https://front-end-challenge-lac.vercel.app/',
+        color: '#5c16c5',
+        title: "SEARCH TOP MOVIES",
+        description: "With the TMDB API, I developed a website where the user can search for movies using filters. The app consumes the API and the site is server side rendered.",
         techs: [
             'Next.js',
-            'NextAuth.js',
+            'React',
+            'React-icons',
             'Tailwind',
-            'Spotify Api',
-            'Recoil'
+            'TMDB API'
         ],
-        gitLink: 'https://github.com/YuriCorredor/spotify-clone',
-        bgPath: '/spotify.jpg',
-        inverted: true
+        gitLink: 'https://github.com/YuriCorredor/search-top-movies',
+        bgPath: '/movies.jpg'
     },
     {
-        link: 'https://spotify-clone-yuri-corredor.vercel.app/',
-        color: '#1ed760',
-        title: "SPOTIFY 2.0 (clone)",
-        description: "With the spotify API, I decided to clone their Web App spotify's interface and some of its main features.Because of their API limitations, to use the clone you've to have Spotify Premium and a spotify device running.",
+        link: 'https://fablec-site.vercel.app/',
+        color: '#2a582a',
+        title: "FABLEC",
+        description: "I was contracted to do a marketing campaign to this company and then they decided to extend the contract and asked for a simple website where they could display their services. So this was what I did.",
         techs: [
             'Next.js',
-            'NextAuth.js',
+            'Nodemailer',
             'Tailwind',
-            'Spotify Api',
-            'Recoil'
+            'Yup',
+            'Formik'
         ],
-        gitLink: 'https://github.com/YuriCorredor/spotify-clone',
-        bgPath: '/spotify.jpg',
-        inverted: false
+        gitLink: 'https://github.com/YuriCorredor/fablec',
+        bgPath: '/fablec.jpg'
+    },
+    {
+        link: null,
+        color: '#f8475c',
+        title: "CHAT APP",
+        description: "This app was created using Facebook's technology React Native and it's a study case for learning real time communication between users. It uses, of course, react native and a backend in Python with the Flask framework.",
+        techs: [
+            'React-native',
+            'Redux',
+            'Socket.io',
+            'Python',
+            'Flask',
+            'SQLAlchemy',
+            'Expo'
+        ],
+        gitLink: 'https://github.com/YuriCorredor/chat-app',
+        bgPath: '/chat.jpg'
     },
 ]
 
 export default function Projects() {
-
     const md = useMediaQuery(768)
 
     return (
         <section className="flex justify-center items-center w-full">
             <div className="max-w-7xl w-full flex flex-col justify-center items-center z-[9999] mt-14">
-                <h1 className="text-4xl sm:text-6xl text-white font-home font-bold pb-8">PROJECTS</h1>
+                <ProjectsTitle />
                 {projects.map((project, index) => <ProjectItem 
                     key={index}
                     link={project.link}
@@ -69,7 +83,7 @@ export default function Projects() {
                     techs={project.techs}
                     gitLink={project.gitLink}
                     bgPath={project.bgPath}
-                    inverted={project.inverted}
+                    index={index}
                     md={md}
                 />)}
             </div>
