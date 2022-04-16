@@ -71,7 +71,7 @@ export default function Projects() {
     const md = useMediaQuery(768)
 
     return (
-        <section className="flex justify-center items-center w-full">
+        <section className="flex justify-center items-center w-full mt-8">
             <div className="max-w-7xl w-full flex flex-col justify-center items-center z-[9999] mt-14">
                 <ProjectsTitle />
                 {projects.map((project, index) => <ProjectItem 

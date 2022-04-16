@@ -1,7 +1,36 @@
 import { BiLinkExternal } from 'react-icons/bi'
 import { SiGithub } from 'react-icons/si'
+import { useEffect, useRef, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
+import { motion, useAnimation } from 'framer-motion'
+
+const divVariants = {
+    hidden: {
+        y: 100,
+        opacity: 0
+    },
+    visible: {
+        y: 0,
+        opacity: 1,
+        transition: {
+            duration: 0.8
+        }
+    }
+}
 
 export default function ProjectItem({ link, color, title, description, techs, gitLink, bgPath, md, index }) {
+
+    const [alreadySeen, setAlreadySeen] = useState(false)
+    const { ref, inView } = useInView()
+    const controls = useAnimation()
+
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible")
+            setAlreadySeen(true)
+        }
+        if (!inView && !alreadySeen) controls.start("hidden")
+    }, [controls, inView])
 
     const hexToRgb = hex =>
     hex.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i ,(m, r, g, b) => '#' + r + r + g + g + b + b)
@@ -13,7 +42,7 @@ export default function ProjectItem({ link, color, title, description, techs, gi
     const inverted = index % 2 == 0
 
     return (
-        <div className="text-white flex m-3 md:m-8 relative my-8 md:my-16 text-shadow">
+        <motion.div variants={divVariants} initial="hidden" animate={controls} ref={ref} className="text-white flex m-3 md:m-8 relative my-8 md:my-16 text-shadow">
             <div className={`${inverted ? 'order-2' : ''} rounded-sm absolute md:relative hidden md:block`}>
                 <a rel="noreferrer" target="_blank" href={link}>
                     <div style={{backgroundColor: `rgb(${colorRGB[0]} ${colorRGB[1]} ${colorRGB[2]} / var(--tw-bg-opacity))`}} className="absolute rounded-sm h-full w-full bg-opacity-30 hover:bg-opacity-0 transition-all"/>
@@ -41,6 +70,6 @@ export default function ProjectItem({ link, color, title, description, techs, gi
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
