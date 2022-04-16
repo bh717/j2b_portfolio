@@ -6,14 +6,14 @@ import { motion, useAnimation } from 'framer-motion'
 
 const divVariants = {
     hidden: {
-        y: 100,
+        scale: 1.25,
         opacity: 0
     },
     visible: {
-        y: 0,
+        scale: 1,
         opacity: 1,
         transition: {
-            duration: 0.8
+            duration: 0.75
         }
     }
 }

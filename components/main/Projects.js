@@ -72,7 +72,7 @@ export default function Projects() {
 
     return (
         <section className="flex justify-center items-center w-full mt-8">
-            <div className="max-w-7xl w-full flex flex-col justify-center items-center z-[9999] mt-14">
+            <div className="max-w-7xl w-full flex flex-col justify-center items-center z-[9999] mt-14 overflow-hidden">
                 <ProjectsTitle />
                 {projects.map((project, index) => <ProjectItem 
                     key={index}
