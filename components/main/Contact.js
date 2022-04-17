@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
+import ContactHeader from "./contact/ContactHeader"
 
 const sentVariants = {
     hidden: {
@@ -42,10 +43,9 @@ export default function Contact() {
     }
     
     return (
-        <section className="mt-16 w-full flex flex-col items-center justify-center p-0">
+        <section id="contact" className="mt-16 w-full flex flex-col items-center justify-center p-0">
             <div className="relative max-w-7xl text-white font-home p-2 sm:p-8 mb-24 z-[9999] flex flex-col justify-center items-center text-center">
-                <h1 className="font-bold text-4xl sm:text-6xl">Send me a message!</h1>
-                <p className="text-xl sm:text-2xl py-4">Say hello, dear astronaut!</p>
+               <ContactHeader />
                 <form onSubmit={handleSubmit} className="flex w-full flex-col text-black font-sans relative mt-0 sm:mt-4">
                     <input
                         required

@@ -35,7 +35,7 @@ const projects = [
     },
     {
         link: 'https://fablec-site.vercel.app/',
-        color: '#2a582a',
+        color: '#FF7A00',
         title: "FABLEC",
         description: "I was contracted to do a marketing campaign to this company and then they decided to extend the contract and asked for a simple website where they could display their services. So this was what I did.",
         techs: [
@@ -50,7 +50,7 @@ const projects = [
     },
     {
         link: null,
-        color: '#f8475c',
+        color: '#007FE3',
         title: "CHAT APP",
         description: "This app was created using Facebook's technology React Native and it's a study case for learning real time communication between users. It uses, of course, react native and a backend in Python with the Flask framework.",
         techs: [
@@ -71,7 +71,7 @@ export default function Projects() {
     const md = useMediaQuery(768)
 
     return (
-        <section className="flex justify-center items-center w-full mt-8">
+        <section id="projects" className="flex justify-center items-center w-full mt-8">
             <div className="max-w-7xl w-full flex flex-col justify-center items-center z-[9999] mt-14 overflow-hidden">
                 <ProjectsTitle />
                 {projects.map((project, index) => <ProjectItem 

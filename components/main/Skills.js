@@ -153,7 +153,7 @@ export default function Skills() {
     }, [])
 
     return (
-        <section className='flex self-center w-full justify-center items-center'>
+        <section id="skills" className='flex self-center w-full justify-center items-center'>
             <motion.div variants={divVariants} initial='hidden' animate={controls} className='flex max-w-7xl w-full flex-col justify-center items-center z-[9999] mt-8'>
                 <h1 ref={titleRef} className='font-home font-bold text-4xl sm:text-6xl text-white'>SKILLS</h1>
                 <div ref={skillsDivRef}>

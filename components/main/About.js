@@ -21,7 +21,7 @@ export default function About() {
     }, [])
 
     return (
-        <section className="my-16 w-full flex items-center justify-center overflow-hidden">
+        <section id="about" className="my-16 w-full flex items-center justify-center overflow-hidden">
             <div className="max-w-7xl text-white z-[9999]">
                 <div className="flex flex-col md:flex-row justify-center items-center md:items-start">
                     <img ref={imgRef} className="order-2 md:order-1" width={280} src="astronaut.jpg"/>

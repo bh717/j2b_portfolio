@@ -51,7 +51,7 @@ export default function Home() {
     return (
         <>
         <ScrollIcon />
-        <section className='flex text-center justify-center items-center w-full mt-28 font-home max-w-[1536px] mx-auto'>
+        <section id="home" className='flex text-center justify-center items-center w-full mt-28 font-home max-w-[1536px] mx-auto'>
             <motion.div
                 variants={divVariants}
                 initial="hidden"
