@@ -50,7 +50,7 @@ export default function Nav() {
                             <span className="pl-2">{'/>'}</span>
                         </a>
                     </div>
-                    <div className="flex justify-center items-center font-extrabold">
+                    <div className="flex justify-center items-center font-extrabold font-home">
                         <a href="#home" className="pr-3 cursor-pointer hover:text-[#ddd] hover:scale-110 transition-all">Home</a>
                         <a href="#about" className="pr-3 cursor-pointer hover:text-[#ddd] hover:scale-110 transition-all">About</a>
                         <a href="#skills" className="pr-3 cursor-pointer hover:text-[#ddd] hover:scale-110 transition-all">Skills</a>
@@ -69,7 +69,7 @@ export default function Nav() {
                             <div className="myBurguer"></div>
                         </div>
                     </div>
-                    <div className={`flex flex-col text-center font-extrabold ${menuOpen ? '' : 'opacity-0 pointer-events-none z-10'}  transition-all`}>
+                    <div className={`flex flex-col text-center font-extrabold font-home ${menuOpen ? '' : 'opacity-0 pointer-events-none z-10'}  transition-all`}>
                         <a onClick={handleMenuClick} href="#home" className="p-3 cursor-pointer hover:text-[#ddd] hover:scale-110 transition-all">Home</a>
                         <a onClick={handleMenuClick} href="#about" className="p-3 cursor-pointer hover:text-[#ddd] hover:scale-110 transition-all">About</a>
                         <a onClick={handleMenuClick} href="#skills" className="p-3 cursor-pointer hover:text-[#ddd] hover:scale-110 transition-all">Skills</a>
