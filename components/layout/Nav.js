@@ -44,7 +44,7 @@ export default function Nav() {
             <div className={`w-full justify-center flex p-4 bg-black bg-opacity-75 border-b-[1px] ${menuOpen ? 'h-[308px] md:h-fit' : 'h-[69px]'} transition-all`}>
                 <div className="max-w-7xl w-full justify-between xl:justify-around flex-row hidden md:flex">
                     <div className="flex font-nav text-3xl font-extrabold">
-                        <a className="cursor-pointer hover:text-[#ddd] hover:scale-110 transition-all">
+                        <a href="#" className="cursor-pointer hover:text-[#ddd] hover:scale-110 transition-all">
                             <span >{'<'}</span>
                             <span>Yuri Corredor</span>
                             <span className="pl-2">{'/>'}</span>
@@ -60,7 +60,7 @@ export default function Nav() {
                 </div>
                 <div className={`md:hidden w-full flex flex-col justify-between items-center ${menuOpen ? 'h-[275px]' : 'h-[35px]'}`}>
                     <div className="flex w-full justify-between items-center">
-                        <a className="cursor-pointer font-extrabold font-nav text-xl hover:text-[#ddd] hover:scale-110 transition-all whitespace-nowrap">
+                        <a href="#" className="cursor-pointer font-extrabold font-nav text-xl hover:text-[#ddd] hover:scale-110 transition-all whitespace-nowrap">
                             <span >{'<'}</span>
                             <span>Yuri Corredor</span>
                             <span className="pl-2">{'/>'}</span>

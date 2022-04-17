@@ -47,7 +47,7 @@ export default function ProjectItem({ link, color, title, description, techs, gi
                 <a rel="noreferrer" target="_blank" href={link}>
                     <div style={{backgroundColor: `rgb(${colorRGB[0]} ${colorRGB[1]} ${colorRGB[2]} / var(--tw-bg-opacity))`}} className="absolute rounded-sm h-full w-full bg-opacity-30 hover:bg-opacity-0 transition-all"/>
                 </a>
-                <img className="block w-fit h-full object-cover rounded-sm" src={bgPath} />
+                <img alt="project" className="block w-fit h-full object-cover rounded-sm" src={bgPath} />
             </div>
             <div style={md ? {backgroundImage: `url(${bgPath})`} : {backgroundImage: 'none'}} className={`${inverted ? 'order-1 text-left' : 'text-right'} flex flex-col relative z-[10000] md:p-0 bg-cover rounded-sm md:rounded-none`}>
                 <div style={{backgroundColor: `rgb(${colorRGB[0]} ${colorRGB[1]} ${colorRGB[2]} / var(--tw-bg-opacity))`}} className="p-8 h-full w-full bg-opacity-80 absolute block rounded-sm md:hidden"/>
