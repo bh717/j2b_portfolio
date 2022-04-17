@@ -23,7 +23,7 @@ export default function About() {
     return (
         <section id="about" className="my-16 w-full flex items-center justify-center">
             <div className="max-w-7xl text-white z-[9999]">
-                <div className="flex flex-col md:flex-row justify-center items-center md:items-start">
+                <div className="flex flex-col md:flex-row justify-center items-center md:items-start overflow-hidden">
                     <img ref={imgRef} className="order-2 md:order-1" width={280} src="astronaut.jpg"/>
                     <div className="order-1 md:order-2 ">
                         <h1 ref={titleRef} className="text-center font-home p-6 md:p-12 pt-0 px-2 text-4xl sm:text-6xl font-bold">ABOUT ME</h1>
