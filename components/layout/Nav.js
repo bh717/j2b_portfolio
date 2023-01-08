@@ -46,7 +46,7 @@ export default function Nav() {
                     <div className="flex font-nav text-3xl font-extrabold">
                         <a href="#" className="cursor-pointer hover:text-[#ddd] hover:scale-110 transition-all">
                             <span >{'<'}</span>
-                            <span>Yuri Corredor</span>
+                            <span>John Simard</span>
                             <span className="pl-2">{'/>'}</span>
                         </a>
                     </div>
@@ -62,7 +62,7 @@ export default function Nav() {
                     <div className="flex w-full justify-between items-center">
                         <a href="#" className="cursor-pointer font-extrabold font-nav text-xl hover:text-[#ddd] hover:scale-110 transition-all whitespace-nowrap">
                             <span >{'<'}</span>
-                            <span>Yuri Corredor</span>
+                            <span>John Simard</span>
                             <span className="pl-2">{'/>'}</span>
                         </a>
                         <div ref={myMenu} onClick={handleMenuClick} className="py-4 mx-5 cursor-pointer">

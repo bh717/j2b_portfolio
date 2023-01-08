@@ -10,7 +10,6 @@ export default function Layout({ children }) {
                 <ThreeD />
                 <main className='absolute w-full bg-black'>
                     {children}
-                    <Footer />
                 </main>
             </div>
         </>

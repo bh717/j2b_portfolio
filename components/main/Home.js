@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import ScrollIcon from './home/ScrollIcon'
-import { SiGithub, SiLinkedin } from 'react-icons/si'
+import { SiEthereum, SiGithub, SiIonic, SiLinkedin } from 'react-icons/si'
 
 const divVariants = {
     hidden: {
@@ -65,14 +65,17 @@ export default function Home() {
                     animate={controls}
                     className='z-[9999] justify-center flex flex-col p-3 m-2 h-fit bg-black bg-opacity-75 rounded-md'
                 >
-                    <h1 className='text-4xl sm:text-6xl font-bold'>Yuri Corredor</h1>
-                    <h3 className='text-xl sm:text-2xl'>Developer</h3>
+                    <h1 className='text-4xl sm:text-6xl font-bold'>John Simard</h1>
+                    <h3 className='text-xl sm:text-2xl'>Blockchain Developer</h3>
                     <div className='flex flex-wrap self-end my-2 w-full justify-center'>
-                        <a rel="noreferrer" target="_blank" href='https://github.com/YuriCorredor' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
+                        <a rel="noreferrer" target="_blank" href='https://github.com/code-rain002' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
                             <SiGithub color='white' size={30} />
                         </a>
-                        <a rel="noreferrer" target="_blank" href='https://www.linkedin.com/in/yuri-corredor/' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
-                            <SiLinkedin color='white' size={30} />
+                        <a rel="noreferrer" target="_blank" href='https://www.blockchaindevs.net/developers/444' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
+                            <SiEthereum color='white' size={30} />
+                        </a>
+                        <a rel="noreferrer" target="_blank" href='https://www.jobcase.com/profile/-t6-CeQeiqDuuyOxk2H0m41U' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
+                            <SiIonic color='white' size={30} />
                         </a>
                     </div>
                 </motion.div>

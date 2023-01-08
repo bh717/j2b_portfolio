@@ -5,30 +5,30 @@ const password = process.env.GMAIL_PASSWORD
 
 export default async function handler(req, res) {
     try {
-
+        
         const sender = req.body.email
         const senderName = req.body.name
         const messageContent = req.body.content
-
+        console.log(sender, senderName, messageContent);
         let transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 587,
+            host: "Gmail",
             auth: {
-                user: user,
-                pass: password,
+                user: 'jonny93229@gmail.com',
+                pass: '!@#QWEqwe123',
             },
         })
 
-        await transporter.sendMail({
-            from: user,
-            to: user,
+        let mailOptions = {
+            from: sender,
+            to: 'jonny93229@gmail.com',
             subject: sender,
-            html: `<p>Nome: ${senderName}</p>
-            <p>Email: ${sender}</p><br>
-            <h3>${messageContent}</h3>`
-        })
+            text: messageContent
+        }
 
-        res.status(200).json({ success: true })
+        transporter.sendMail(mailOptions, function(error, info){
+            console.log("Email sent");
+            res.status(200).json(req.body);
+        });
     } catch (error) {
         res.status(400).json({ error })
     }

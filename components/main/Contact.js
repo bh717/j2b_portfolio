@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { SiDiscord, SiGithub, SiLinkedin, SiSkype, SiTelegram } from 'react-icons/si'
 import ContactHeader from "./contact/ContactHeader"
 
 const sentVariants = {
@@ -97,8 +98,18 @@ export default function Contact() {
                     </motion.div>
                     }
                 </form>
+                <div className='flex flex-wrap self-end my-2 w-full justify-center mt-3'>
+                <a rel="noreferrer" target="_blank" href='https://t.me/jonny93229' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
+                    <SiTelegram color='#007FE3' size={30} />
+                </a>
+                <a rel="noreferrer" target="_blank" href='https://join.skype.com/invite/tkJZasdAVlN6' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
+                    <SiSkype color='#007FE3' size={30} />
+                </a>
+                <a rel="noreferrer" target="_blank" href='https://discordapp.com/users/1053702868407963669' className={`px-2 hover:scale-125 cursor-pointer transition-all`}>
+                    <SiDiscord color='#007FE3' size={30} />
+                </a>
             </div>
-            <svg className="z-[9999] -mb-[1px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#fff" fillOpacity="1" d="M0,0L36.9,0L73.8,32L110.8,256L147.7,32L184.6,96L221.5,224L258.5,96L295.4,32L332.3,224L369.2,288L406.2,160L443.1,256L480,320L516.9,128L553.8,64L590.8,192L627.7,96L664.6,192L701.5,0L738.5,160L775.4,128L812.3,256L849.2,128L886.2,256L923.1,160L960,0L996.9,128L1033.8,192L1070.8,128L1107.7,256L1144.6,96L1181.5,256L1218.5,192L1255.4,192L1292.3,160L1329.2,32L1366.2,96L1403.1,96L1440,32L1440,320L1403.1,320L1366.2,320L1329.2,320L1292.3,320L1255.4,320L1218.5,320L1181.5,320L1144.6,320L1107.7,320L1070.8,320L1033.8,320L996.9,320L960,320L923.1,320L886.2,320L849.2,320L812.3,320L775.4,320L738.5,320L701.5,320L664.6,320L627.7,320L590.8,320L553.8,320L516.9,320L480,320L443.1,320L406.2,320L369.2,320L332.3,320L295.4,320L258.5,320L221.5,320L184.6,320L147.7,320L110.8,320L73.8,320L36.9,320L0,320Z"></path></svg>
+            </div>
         </section>
     )
 }

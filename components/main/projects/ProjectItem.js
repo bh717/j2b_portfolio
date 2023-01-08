@@ -61,9 +61,9 @@ export default function ProjectItem({ link, color, title, description, techs, gi
                         {techs.map((tech, index) => <p key={index} className={`${inverted ? 'pr-4' : 'pl-4'} font-home text-sm font-semibold`}>{tech}</p>)}
                     </div>
                     <div className={`${inverted ? 'justify-start' : 'justify-end'} flex flex-wrap self-end my-2 w-full`}>
-                        <a rel="noreferrer" target="_blank" href={gitLink} className={`${inverted ? 'pr-2' : 'pl-2'} hover:scale-125 cursor-pointer transition-all`}>
+                        {/* <a rel="noreferrer" target="_blank" href={gitLink} className={`${inverted ? 'pr-2' : 'pl-2'} hover:scale-125 cursor-pointer transition-all`}>
                             <SiGithub color={md ? 'white' : color} size={30} />
-                        </a>
+                        </a> */}
                         <a rel="noreferrer" target="_blank" href={link} className={`${inverted ? 'pr-2' : 'pl-2'} hover:scale-125 cursor-pointer transition-all`}>
                             <BiLinkExternal color={md ? 'white' : color} size={30} />
                         </a>

@@ -16,12 +16,16 @@ import {
     SiGit,
     SiPostman,
     SiRedux,
-    SiThreedotjs
+    SiThreedotjs,
+    SiWeb3Dotjs,
+    SiEthereum,
+    SiSolidity,
+    SiRust
 } from 'react-icons/si'
 import { FaNode } from 'react-icons/fa'
 import SkillsItem from './skills/SkillsItem'
 
-const skills = [
+const webskills = [
     {
         name: 'expressjs',
         Icon: SiExpress,
@@ -104,6 +108,29 @@ const skills = [
     }
 ]
 
+const blockchainskills = [
+    {
+        name: 'WEB3',
+        Icon: SiWeb3Dotjs,
+        color: 'white'
+    },
+    {
+        name: 'Ethereum',
+        Icon: SiEthereum,
+        color: '#ead41c'
+    },
+    {
+        name: 'Solidity',
+        Icon: SiSolidity,
+        color: '#89bb3c'
+    },
+    {
+        name: 'Rust',
+        Icon: SiRust,
+        color: '#359e40'
+    }
+]
+
 const divVariants = {
     hidden: {
         y: 100,
@@ -127,12 +154,7 @@ export default function Skills() {
     const skillsDivRef = useRef()
 
     const parallax = e => {
-        if (skillsDivRef && titleRef) {
-            const y = (e.clientY * -1) / 100
-            const x = (e.clientX * -1) / 100
-            titleRef.current.style.transform = `translateX(${-x}px) translateY(${-y}px)`
-            skillsDivRef.current.style.transform = `translateX(${x}px) translateY(${y}px)`
-        }
+
     }
 
     useEffect(() => {
@@ -155,10 +177,22 @@ export default function Skills() {
     return (
         <section id="skills" className='flex self-center w-full justify-center items-center'>
             <motion.div variants={divVariants} initial='hidden' animate={controls} className='flex max-w-7xl w-full flex-col justify-center items-center z-[9999] mt-8'>
-                <h1 ref={titleRef} className='font-home font-bold text-4xl sm:text-6xl text-white'>SKILLS</h1>
+                {/* <h1 ref={titleRef} className='font-home font-bold text-4xl sm:text-6xl text-white'>SKILLS</h1> */}
+                <h3 ref={titleRef} className='font-home font-bold text-2xl sm:text-6xl text-white'>Web Development</h3>
+                <div ref={skillsDivRef}>                
+                    <div ref={ref} className='p-4 py-8 flex justify-center items-center flex-wrap max-w-3xl font-home text-white'>
+                        {webskills.map((skill, index) => <SkillsItem 
+                            key={index} 
+                            Icon={skill.Icon} 
+                            name={skill.name} 
+                            color={skill.color} 
+                        />)}
+                    </div>
+                </div>
+                <h3 ref={titleRef} className='font-home font-bold text-2xl sm:text-6xl text-white'>Blockchain Development</h3>
                 <div ref={skillsDivRef}>
                     <div ref={ref} className='p-4 py-8 flex justify-center items-center flex-wrap max-w-3xl font-home text-white'>
-                        {skills.map((skill, index) => <SkillsItem 
+                        {blockchainskills.map((skill, index) => <SkillsItem 
                             key={index} 
                             Icon={skill.Icon} 
                             name={skill.name} 

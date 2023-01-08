@@ -106,7 +106,7 @@ export default function ThreeD() {
                     previousTime = elapsedTime
 
                     if (mixer) mixer.update(deltaTime * 10)
-                    if (model) updateModel(model, deltaTime * 10)
+                    // if (model) updateModel(model, deltaTime * 10)
 
                     camera.lookAt(target)
 
